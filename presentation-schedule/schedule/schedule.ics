@@ -1,0 +1,804 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:NixCon 2018 Schedule
+X-WR-TIMEZONE:Europe/London
+X-WR-CALDESC:NixCon is a community-oriented conference for contributors and
+  users of Nix and NixOS. It's about sharing experiences\, inspiring people 
+ and discussing future development.
+BEGIN:VEVENT
+DTSTART:20181025T120000Z
+DTEND:20181025T130000Z
+DTSTAMP:20181021T201940Z
+UID:2k8g92nn946mud7ovt419ttdni@google.com
+CREATED:20180816T085430Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T125008Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Lunch break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T103000Z
+DTEND:20181025T110000Z
+DTSTAMP:20181021T201940Z
+UID:4n48qj40lf3uhmcufp4479tsf2@google.com
+CREATED:20180816T085035Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T125436Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:30 min break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T113000Z
+DTEND:20181026T120000Z
+DTSTAMP:20181021T201940Z
+UID:7m0je0ll2v5f7afjmqf8eqc9cn@google.com
+CREATED:20180909T124504Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T125540Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Lightning talks section
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T120000Z
+DTEND:20181026T130000Z
+DTSTAMP:20181021T201940Z
+UID:7djjd2ubr2vi7aoknbie6jf4ee@google.com
+CREATED:20180816T090012Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T125552Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Lunch break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T103000Z
+DTEND:20181026T110000Z
+DTSTAMP:20181021T201940Z
+UID:2i1sg2sqg11g1mabcp1071dpup@google.com
+CREATED:20180816T090113Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T125603Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:30 min break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181027T120000Z
+DTEND:20181027T130000Z
+DTSTAMP:20181021T201940Z
+UID:67ithl4528gvb50cplh6r5hqqb@google.com
+CREATED:20180816T110853Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T125844Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Lunch break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T093000Z
+DTEND:20181026T100000Z
+DTSTAMP:20181021T201940Z
+UID:3b1vve1pbakq01vihd2roohbf8@google.com
+CREATED:20180909T124310Z
+DESCRIPTION:I'll talk about how I've implemented a deployment system from s
+ cratch in Nix for a client\, and show how Nix(OS) modules can be used outsi
+ de NixOS in productive ways.\n---\nBio: Freelancing devops engineer interes
+ ted in functional programming and declarative deployments
+LAST-MODIFIED:20180909T125931Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Rickard Nilsson - Nix(OS) modules everywhere!
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T100000Z
+DTEND:20181026T103000Z
+DTSTAMP:20181021T201940Z
+UID:1peivs0940ipjk487iau1a1cbr@google.com
+CREATED:20180909T124342Z
+DESCRIPTION:Building a lightweight hypervisor for Linux system containers o
+ n top of NixOS and not-os. How we adopted Nix ecosystem to allow migration 
+ of our production infrastructure from OpenVZ to LXC. More at https://vpsadm
+ inos.org/\n---\nBio: Opensource software and hardware hacker - https://gith
+ ub.com/sorki
+LAST-MODIFIED:20180909T125955Z
+LOCATION:
+SEQUENCE:3
+STATUS:CONFIRMED
+SUMMARY:Richard Marko - vpsAdminOS
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T110000Z
+DTEND:20181026T113000Z
+DTSTAMP:20181021T201940Z
+UID:67mk5fnl5h87i8pn9akah9g0ak@google.com
+CREATED:20180909T124410Z
+DESCRIPTION:Reflashing your broadband router with Linux (e.g. DD-WRT\, Open
+ WRT\, Tomato or variants) gives you unparalleled flexibility to do things t
+ hat the manufacturer probably hadn't thought of. Remembering what you did\,
+  six months later\, is often trickier.\n\nNixWRT is a (currently experiment
+ al) collection of derivations using the Nix package system and bits of NixO
+ S to build router and IoT device firmware images using the principles of de
+ clarativity and composability that are why we love Nix. This talk will give
+  you an overview of how it works\, some war stories about the challenges fa
+ ced\, and hopefully the data you need to to decide whether to try it yourse
+ lf on your own hardware.\n---\nBio: Daniel Barlow has been using Linux sinc
+ e kernel 0.99 (Slackware and MCC-Interim)\, and has never really adjusted a
+ s computing has moved on. Playing with resource-limited systems like router
+ s and IoT devices helps him pretend it's still 1995.\n\nSince then he's pro
+ grammed professionally in Perl\, Common Lisp and Ruby\, and played with Clo
+ jure and Nix.\n\nMost likely to say: ""try looking at it with {strace\, wir
+ eshark}?"" Least likely to say: ""just buy a closed-source solution from an
+  enterprise vendor""
+LAST-MODIFIED:20180909T130023Z
+LOCATION:
+SEQUENCE:4
+STATUS:CONFIRMED
+SUMMARY:Daniel Barlow - NixWRT: purely functional firmware images for IoT d
+ evices
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T130000Z
+DTEND:20181026T133000Z
+DTSTAMP:20181021T201940Z
+UID:5rfpgt13i0icnmp64ohcvtqbr0@google.com
+CREATED:20180816T093247Z
+DESCRIPTION:NixOS networking has been the source of weird bugs for years. T
+ here is no simple mapping between systemd units and the setup and teardown 
+ of network interfaces and its interdependencies. The systemd project is awa
+ re of that and implemented systemd-networkd to manage networking configurat
+ ion. There even is a second implementation of the NixOS networking interfac
+ e that uses systemd-netword but in its current state has some drawbacks and
+  inconsistencies that prevent using it by default.\n\nThe question for NixO
+ S is if the adoption of systemd-networkd is desired and if a redesign of th
+ e current config interface to support as much features as possible is neede
+ d. This talk presents my findings around the topic\, some design ideas conc
+ erning a possible interface and my personal wishlist of useful and cool net
+ working features that should be supported.\n---\nBio: Grumpy infrastructure
+  engineer\, NixOS security team & retired release manager
+LAST-MODIFIED:20180909T130047Z
+LOCATION:
+SEQUENCE:4
+STATUS:CONFIRMED
+SUMMARY:Franz Pletz - Redesigning NixOS Networking
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T133000Z
+DTEND:20181026T140000Z
+DTSTAMP:20181021T201940Z
+UID:031onfm1ikdmeuj190ni1puref@google.com
+CREATED:20180816T092606Z
+DESCRIPTION:There are already plenty of node package managers so why yet an
+ other one?\nThis talk aims to give you an overview of the current npm-to-ni
+ x ecosystem\, what tools there are\, what the strengths/shortcomings of eac
+ h one have and what pnpm is all about and how it pertains to nix.\n\nAfter 
+ that I will be talking you through what goes in to building pnpm2nix\, what
+  problems I had along the way and how nix/nixpkgs could improve to help suc
+ h efforts along.\n---\nBio: I love building software
+LAST-MODIFIED:20180909T130105Z
+LOCATION:
+SEQUENCE:3
+STATUS:CONFIRMED
+SUMMARY:Adam Hose - Building pnpm2nix: yet another npm to nix tool
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T130000Z
+DTEND:20181025T133000Z
+DTSTAMP:20181021T201940Z
+UID:1644aic43sitmeljpinne4no2a@google.com
+CREATED:20180816T092433Z
+DESCRIPTION:\nMy team develops a data pipeline to generate music recommenda
+ tions. It consists of many batch jobs that read data from somewhere and wri
+ te their output somewhere else\, with complex dependencies and parameter tu
+ ning. Historically\, we have configured these batch jobs with hand-written 
+ bash configuration\, or with dedicated python-based tools such as Airflow. 
+ However\, both lack flexibility\, often forcing the developer to bypass the
+ m and to run jobs manually during development.\n\nThe tasks of data pipelin
+ e configuration and package definition share some requirements: both imply 
+ running many programs in a specific order and with specific parameters. Sin
+ ce nix is a language dedicated to packages definition\, which allows expres
+ sing packages in a succinct and highly flexible way\, we decided to try to 
+ use it for data pipeline configuration. Nix-the-tool is too centered around
+  package management for our use case\, so we built our own tool around nix-
+ the-language.\n\nIt this talk\, we’ll explore how to apply nix to data pipe
+ line configuration. This will give us the opportunity to look at nix as a l
+ anguage\, abstracted from its current ecosystem. We’ll also explore how to 
+ structure a nix codebase\, encountering the same questions nixpkgs encounte
+ red a long time ago\, but in a much smaller environment.\n\nThe main goal o
+ f this talk is to share the different point of view of nix that comes from 
+ applying it to a different problem and starting from scratch. We also hope 
+ to serve as an inspiration to explore other nix-based DSLs.\n---\nBio: Geor
+ ges is a Software Engineer at SoundCloud\, in Berlin. He is part of the tea
+ m that generates music recommendations. He loves exploring new ways to solv
+ e engineering problems\, which led him to look into exciting technologies s
+ uch as Haskell and NixOS. He contributed a few tools to the nix community\,
+  such as http://howoldis.herokuapp.com/ and the infamous Travis Nixpkgs int
+ egration. Some of his favorites hobbies are playing board games and learnin
+ g German.
+LAST-MODIFIED:20180909T130451Z
+LOCATION:
+SEQUENCE:6
+STATUS:CONFIRMED
+SUMMARY:Georges Dubus - Nix for data pipeline configuration
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T133000Z
+DTEND:20181025T140000Z
+DTSTAMP:20181021T201940Z
+UID:4eo4jvi8opi028m71n1tgk672e@google.com
+CREATED:20180816T093447Z
+DESCRIPTION:I would like to share our experiences while migrating a VM-base
+ d hosting infrastructure at Flying Circus Internet Operations from Gentoo t
+ o NixOS. It is a case study of migrating 500+ VM running diverse customer p
+ rojects using a wide range of web technologies.\n\nI'll cover the following
+  main points:\n\n1. What was our motivation to change to NixOS? Which speci
+ fic features of NixOS attracted us?\n\n2. Creating a NixOS-based hosting pl
+ atform - What did we have to implement? What is still missing?\n\n3. What a
+ re the pain points? How could NixOS become more attractive?\n\n4. What do o
+ ur users think? -- benefits and stumbling blocks.\n---\nBio: Christian is a
+  systems engineer working with Flying Circus Internet Operations in Halle (
+ Saale)\, Germany. He works mainly on infrastructure which keeps customers' 
+ web applications running. Main programming languages are Python\, Nix\, Rus
+ t. Christian is a regular contributor to NixOS\, most known for vulnix and 
+ vulnerability roundups.
+LAST-MODIFIED:20180909T130513Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Christian Kauhaus - Migrating a Hosting Infrastructure from Gentoo 
+ to NixOS
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181027T093000Z
+DTEND:20181027T120000Z
+DTSTAMP:20181021T201940Z
+UID:7qkhkp8hkt18q8bh54ug3c9dbs@google.com
+CREATED:20180909T130847Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T130847Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Hacking
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20181027
+DTEND;VALUE=DATE:20181028
+DTSTAMP:20181021T201940Z
+UID:0f9vqragoocrpvghtrdc9ajsct@google.com
+CREATED:20180816T082717Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T131034Z
+LOCATION:Coin Street Neighourhood Centre\, 108 Stamford StLambethSE1 9NH Lo
+ ndon\, London\, GB\, SE1 9NH
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:NixCon 2018 - Hackday
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20181025
+DTEND;VALUE=DATE:20181027
+DTSTAMP:20181021T201940Z
+UID:7r2voiom8c7uq848i6p1f1nbpb@google.com
+CREATED:20180816T082710Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T131051Z
+LOCATION:Coin Street Neighourhood Centre\, 108 Stamford StLambethSE1 9NH Lo
+ ndon\, London\, GB\, SE1 9NH
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:NixCon 2018 - Conference
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T092000Z
+DTEND:20181025T093000Z
+DTSTAMP:20181021T201940Z
+UID:7htq2k2dt9gitacrh4q3foe8e4@google.com
+CREATED:20180816T083526Z
+DESCRIPTION:Welcome and thanks to sponsors
+LAST-MODIFIED:20180909T131314Z
+LOCATION:
+SEQUENCE:12
+STATUS:CONFIRMED
+SUMMARY:Welcome\, opening statement
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T093000Z
+DTEND:20181025T100000Z
+DTSTAMP:20181021T201940Z
+UID:0mb3kd85itj7uj3tv6pkrkvq7j@google.com
+CREATED:20180816T083833Z
+DESCRIPTION:Our BDFL will be talking about the Nix roadmap\n---\nBio: Eelco
+  is a senior software engineer at Tweag I/O. He obtained a PhD in Computer 
+ Science from Utrecht University in 2006 and was a postdoctoral researcher a
+ t\nUtrecht University and Delft University. As part of his PhD research pro
+ ject at Utrecht University\, he developed Nix\, the purely functional packa
+ ge manager\, which forms the basis of the NixOS Linux distribution. He prev
+ iously worked at LogicBlox and Infor.
+LAST-MODIFIED:20180909T131333Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Eelco Dolstra - the Nix roadmap
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T110000Z
+DTEND:20181025T113000Z
+DTSTAMP:20181021T201940Z
+UID:1dao5d11qv2v48mt28j9jqdndv@google.com
+CREATED:20180816T093020Z
+DESCRIPTION:Nix's build sandbox is one of the key enablers to ensure we can
+  build our packages on every machine in the same way. It normalizes the bui
+ ld environment and restricts access to non-reproducible file and network re
+ sources. However at times it can be difficult and time consuming to figure 
+ out why a long running build failed. In this talk I will give a brief overv
+ iew about the anatomy of Nix's sandbox on Linux. Then I will show how we ca
+ n leverage breakpoints in builder scripts to inspect failures in the sandbo
+ x as they happen. Finally I will present dynamic tracing techniques based o
+ n the sysdig framework that can show likely impurities in the build process
+  to hint to root cause of build failures.\n---\nBio: I do my PhD in Univers
+ ity of Edinburgh where I work in systems research. When I am not reconstruc
+ ting program failures from hardware traces and coredumps\, I review and mer
+ ge pull requests in nixpkgs or work on the NUR platform
+LAST-MODIFIED:20180909T131349Z
+LOCATION:
+SEQUENCE:3
+STATUS:CONFIRMED
+SUMMARY:Jörg 'Mic92' Thalheim - About Nix sandboxes and breakpoints
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181027T130000Z
+DTEND:20181027T173000Z
+DTSTAMP:20181021T201940Z
+UID:714vjqu6gkcr5r0cjnt2nud0pd@google.com
+CREATED:20180909T130856Z
+DESCRIPTION:
+LAST-MODIFIED:20180909T131623Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Hacking
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T100000Z
+DTEND:20181025T103000Z
+DTSTAMP:20181021T201940Z
+UID:19kqnph3q453gpat1glr32tld6@google.com
+CREATED:20180816T084451Z
+DESCRIPTION:The release managers talking about the latest NixOS release
+LAST-MODIFIED:20180909T162724Z
+LOCATION:
+SEQUENCE:4
+STATUS:CONFIRMED
+SUMMARY:Vladimír Čunát\, Samuel Dionne-Riel - NixOS 18.09 release managers
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T113000Z
+DTEND:20181025T120000Z
+DTSTAMP:20181021T201940Z
+UID:1bt2glhcnua1jdgq0r5qq5vdtl@google.com
+CREATED:20180909T123613Z
+DESCRIPTION:This talk is going to cover how to best use Cachix in hobby and
+  professional manner to ease development and adoption of Nix. \n\nTalk is a
+ lso going to cover the motivation how Cachix came to be\, what are the desi
+ gn decision behind it and their consequences\, usage statistics and where i
+ t's possibly headed.\n---\nBio: Domen Kozar: I've started using Nix in 2012
+  and after years of many contributions in free time\, started using Nix exc
+ lusively in 2016 packaging up OpenStack and functional testing a cluster wi
+ th scenarios.\n\nIn 2016 I've founded Enlambda consulting which helped many
+  clients like Snabb and IOHK to adopt Nix as a way to solve interesting com
+ plex software distribution problems in our industry.\n\nRobert Hensing: Nix
+  user since early 2016\, Nix and Haskell freelancer \nsince 2017. You may h
+ ave caught him on stack overflow with a solution\, \nadvice or bad news. He
+  is convinced that the future is not just \nimmutable\, but functional.
+LAST-MODIFIED:20180917T170404Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Domen Kožar\, Robert Hensing - Cachix - binary cache(s) for everyon
+ e
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T083000Z
+DTEND:20181025T092000Z
+DTSTAMP:20181021T201940Z
+UID:12d7j5hm1pqqhkm6sk4jv10ues@google.com
+CREATED:20180816T083450Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T191705Z
+LOCATION:
+SEQUENCE:6
+STATUS:CONFIRMED
+SUMMARY:Welcome coffee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T083000Z
+DTEND:20181026T093000Z
+DTSTAMP:20181021T201940Z
+UID:5vv75efgmdtgckgfv8238acf31@google.com
+CREATED:20180816T085959Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T191714Z
+LOCATION:
+SEQUENCE:2
+STATUS:CONFIRMED
+SUMMARY:Welcome coffee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181027T083000Z
+DTEND:20181027T093000Z
+DTSTAMP:20181021T201940Z
+UID:5lb5sr95neavb87820kprq5th2@google.com
+CREATED:20180816T110830Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T191724Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Welcome coffee
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T140000Z
+DTEND:20181025T143000Z
+DTSTAMP:20181021T201940Z
+UID:3co9otn5hrvrogaq731invav9g@google.com
+CREATED:20181016T195038Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T195115Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:30 min break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T143000Z
+DTEND:20181025T150000Z
+DTSTAMP:20181021T201940Z
+UID:0d0elgkguif052hvja0hiifr89@google.com
+CREATED:20180909T124049Z
+DESCRIPTION:High energy physics\, and large scale research in general\, has
+  both\ncommon and unusual requirements for computing. Software must be dist
+ ributed\nacross a wide range of non-heterogeneous resources\, with single e
+ xperiments\nable to continuously utilise many 10\,000s of globally distribu
+ ted machines.\nExploitation of data continues for decades after it is first
+  taken\, making\nreproducibility and stability essential.\n\nThe use of Nix
+  has been tested within LHCb\, one of the four large experiments at\nthe La
+ rge Hadron Collider (LHC). In this talk we will discuss the conclusions of\
+ nthis testing\, how Nix is suited to the needs of the ""big science"" commu
+ nity\, as\nwell as presenting some of the challenges which have been found 
+ when testing Nix.\n---\nBio: PhD student in high energy physics at the Univ
+ ersity of Manchester\, UK and a member of the LHCb Collaboration studying t
+ he decays of Charm quarks. Interested utilising tools from outside the high
+  energy physics community to make the use of computing more efficient.
+LAST-MODIFIED:20181016T195123Z
+LOCATION:
+SEQUENCE:3
+STATUS:CONFIRMED
+SUMMARY:Chris Burr - Nix for software deployment in high energy physics
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T150000Z
+DTEND:20181025T153000Z
+DTSTAMP:20181021T201940Z
+UID:4hsoc6300h4cuk0rppp63pj46d@google.com
+CREATED:20180816T093358Z
+DESCRIPTION:\nFor my day job\, I operate a compute fleet on a mixture of pr
+ ivate and public cloud. We started out with NixOps\, but ultimately found o
+ urselves constrained by its limitations and "pet"-focused approach\, so I e
+ nded up learning a lot by building our own cattle-focused deployment tool.-
+ --\nBio: Hi! I'm edef\, and I build software and services for other people 
+ to build software and services with
+LAST-MODIFIED:20181016T195126Z
+LOCATION:
+SEQUENCE:6
+STATUS:CONFIRMED
+SUMMARY:edef - Beyond NixOps: Compute Fleet Operations with NixOS
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T163000Z
+DTEND:20181025T170000Z
+DTSTAMP:20181021T201940Z
+UID:7reteda7kf9agokf2fc2hvdsev@google.com
+CREATED:20180909T124135Z
+DESCRIPTION:My talk I'm proposing is on how to use nix at home in a variety
+  of different ways. We'll start with the basics\, a single git repository w
+ ith multiple machine configurations cloned to /etc/nixos. From there we'll 
+ talk about how to deploy machines using nixops with the none backend\, spec
+ ifically in the context of a home router machine with multiple interfaces r
+ unning all the basic services needed for a secure usable home network. From
+  their we'll foray into how nixos generations works under the hood a bit an
+ d talk about IOHK's work at making a remote deployable mac system using nix
+ -darwin\, as well as some custom code I wrote that allows you to run nix sy
+ stemd services (example being prometheus node exporter) on any linux system
+ . We'll wrap the talk up with some discussion about using nix for home auto
+ mation and monitoring as well as a chance for Q&A.\n---\nBio: I've been inv
+ olved with the nix community for a little over a year. I help out on IRC wh
+ enever I have a chance (disasm). I work on the devops team of IOHK using ni
+ x and haskell on a daily basis. I've been using nixops to deploy my main ho
+ me router for a little over 6 months\, and have been using custom haskell t
+ o deploy my mac systems using nix-darwin for about 3 months.
+LAST-MODIFIED:20181016T195133Z
+LOCATION:
+SEQUENCE:5
+STATUS:CONFIRMED
+SUMMARY:Samuel Leathers - Nix at Home - Configuration management for your h
+ ouse
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T160000Z
+DTEND:20181025T163000Z
+DTSTAMP:20181021T201940Z
+UID:56pe7hfthcfhtq61e3l81sn1jm@google.com
+CREATED:20180909T124209Z
+DESCRIPTION:At Release Engineering within Mozilla\, we develop and support 
+ Firefox release pipelines that help Firefox developers test their patches a
+ nd Release Management plan and execute Firefox releases.\n\nRelease Enginee
+ ring manage a number of services where each one aids in achieving these pip
+ elines. e.g. kicking off and tracking a new release\, analyzing the source 
+ code\, and providing external dependencies for building and testing.\n\nCur
+ rently we use Nix to manage deployment and development of these services.. 
+ For this purpose\, we wrote a small wrapper around Nix\, to make interactio
+ n with Nix easier\, and help with on-boarding.\n\nIn this talk\, I would li
+ ke to share my experience of Nix adoption at Mozilla\, especially within th
+ e Release Engineering / Management team. How we overcome some shortcoming o
+ f Nix-the-tool and what is still waiting for us to improve. What worked wel
+ l and where Nix failed us.\n\nThe main goal of this talk is to help others 
+ who are looking to introduce Nix at work\, to know how to set expectations 
+ and what an such effort looks like.\n---\nBio: Rok is a Release Engineer at
+  Mozilla\, in Berlin. He is part of the Release Engineering team which help
+ s ship Firefox and other Mozilla products. He is the author of pypi2nix too
+ l\, which tries to package python packages in Nix. In his free time … he ha
+ sn't had free time since his son was born.
+LAST-MODIFIED:20181016T195138Z
+LOCATION:
+SEQUENCE:3
+STATUS:CONFIRMED
+SUMMARY:Rok Garbas - How to make Nix ./pleasing to use at work
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T153000Z
+DTEND:20181025T160000Z
+DTSTAMP:20181021T201940Z
+UID:4au74qfkciea5o766b9kvbj1ib@google.com
+CREATED:20180816T145036Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T195140Z
+LOCATION:
+SEQUENCE:5
+STATUS:CONFIRMED
+SUMMARY:30 min break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T140000Z
+DTEND:20181026T143000Z
+DTSTAMP:20181021T201940Z
+UID:0ml5sncadgu6cc44qsjfu4q9eu@google.com
+CREATED:20180909T124653Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T195152Z
+LOCATION:
+SEQUENCE:3
+STATUS:CONFIRMED
+SUMMARY:30 min break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T143000Z
+DTEND:20181026T150000Z
+DTSTAMP:20181021T201940Z
+UID:1427nlq2eri6s38b093a5jmig6@google.com
+CREATED:20180816T085657Z
+DESCRIPTION:One of the main goals of the tools in the Nix project is to ful
+ ly automate deployments from declarative specifications. Thanks to the unde
+ rlying purely functional deployment model of the Nix package manager\, we g
+ et strong guarantees that dependencies are complete\, we get (nearly) bit i
+ dentical builds\, and we can do atomic upgrades and rollbacks.\n\nAlthough 
+ Nix deployments are very powerful\, the tools in the Nix project only manag
+ e the static parts of a system\, such as packages and configuration files. 
+ Nix does not manage any state\, such as databases. As a result\, when deplo
+ ying a NixOS configuration to a different machine\, we get the same static 
+ system configuration (e.g. packages and configuration)\, but any state must
+  still be manually migrated and deployed. In a network of machines\, this c
+ ould become very tedious.\n\nIn this talk\, I will show Dysnomia (https://g
+ ithub.com/svanderburg/dysnomia)\, a deployment tool inspired by Nix that ca
+ n be used to manage units of state\, such\nas databases. It makes units of 
+ states uniformly accessible (it has a plugin system supporting many kinds o
+ f state and databases)\, executes various\ndeployment activities (e.g. acti
+ vation\, deactivation) and can manage snapshots of state in a snapshot stor
+ e that has similarities with the Nix store.\n\nDysnomia can be used as an i
+ ndependent tool\, but is more useful when it is combined with tools in the 
+ Nix project -- we can automatically deploy databases as part of a NixOS con
+ figuration and we can combine it with Disnix to automatically migrate datab
+ ases from one machine to another.\n---\nSander is a contributor to the Nix 
+ project since late 2007. He contributed to many areas in the Nix-ecosystem.
+  He started the Android build environment. He maintains various Nix-related
+  tools\, such as Disnix\, node2nix\, NiJS\, and composer2nix.
+LAST-MODIFIED:20181016T195155Z
+LOCATION:
+SEQUENCE:13
+STATUS:CONFIRMED
+SUMMARY:Sander van der Burg - Dysnomia: complementing Nix deployments with 
+ state deployment
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T150000Z
+DTEND:20181026T153000Z
+DTSTAMP:20181021T201940Z
+UID:4segeeihe9jt2faak586pqiad2@google.com
+CREATED:20180909T124614Z
+DESCRIPTION:Modern High Performance Computing systems are becoming larger a
+ nd more heterogeneous. The proper management of software for the users of s
+ uch systems poses a significant challenge. These users run very diverse app
+ lications that may be compiled with proprietary tools for specialized hardw
+ are. Moreover\, the application life-cycle of these software may exceed the
+  lifetime of the HPC systems themselves. These difficulties motivate the us
+ e of specialized package management systems. In this presentation\, we outl
+ ine an approach to HPC package development\, deployment\, management\, shar
+ ing\, and reuse based on the Nix functional package manager. We report our 
+ experience with this approach inside the GRICAD HPC center in Grenoble\, Fr
+ ance\, and compare it to other existing approaches.\n---\nAfter a PhD in ap
+ plied mathematics\, I have worked in the scientific computing field\, with 
+ a strong HPC component. 
+LAST-MODIFIED:20181016T195204Z
+LOCATION:
+SEQUENCE:5
+STATUS:CONFIRMED
+SUMMARY: Pierre-Antoine Bouttier - Nix as HPC package management system
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T163000Z
+DTEND:20181026T170000Z
+DTSTAMP:20181021T201940Z
+UID:7ojnkmuql5ckq57c802bn6qsve@google.com
+CREATED:20180909T124732Z
+DESCRIPTION:Nix is a fantastic tool for managing the dependencies of your d
+ evelopment projects\, but ironically the Nix language itself has very limit
+ ed facilities for modular code reuse and composition. In this talk\, I will
+  present on my recent experiments with a system\, inspired by node.js's "re
+ quire" mechanism\, to define packages of nix language code that can depend 
+ on other packages. Together with conventions encouraging detailed documenta
+ tion\, good error messages\, and clean interfaces\, I hope this project can
+  form the seed for a robust ecosystem of libraries and tools that can help 
+ move us past the monolith of nixpkgs and enable us to more easily benefit f
+ rom each others' work.\n---\nBio: Shea is a lead engineer at Target's data 
+ science and optimization group\, whose production stack is built with Nix. 
+ He has been part of the NixOS community since 2010\, has been working profe
+ ssionally with Nix since 2012\, and is part of the Nix core team.
+LAST-MODIFIED:20181016T195245Z
+LOCATION:
+SEQUENCE:4
+STATUS:CONFIRMED
+SUMMARY:Shea Levy - require.nix: dependency management for your favorite de
+ pendency manager
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T160000Z
+DTEND:20181026T163000Z
+DTSTAMP:20181021T201940Z
+UID:5nuvbpjnhttitpth3nvpnsi18q@google.com
+CREATED:20180909T124709Z
+DESCRIPTION:When building extensions for databases\, it can become burdenso
+ me to make sure you build and deploy matching versions. This often involves
+  changing the version number in multiple places or custom scripting\, in pa
+ rticular when deploying extensions to other environments. In this talk I wi
+ ll cover two cases of building database extensions for PostgreSQL and Redis
+ \, as well as how to use Nix to manage Python environments to run tests aga
+ inst temporary instances of the database. Finally I will briefly discuss bu
+ ilding docker images for the database with the extension installed.\n---\nB
+ io: John is a software engineer at InfoSum\, where he works on the core com
+ ponents of their customer data platform. At InfoSum\, he uses Nix to build 
+ several C projects as well as managing python dependencies\, and has been u
+ sing NixOS as his primary operating system for over a year. In his free tim
+ e\, John enjoys experimenting with Haskell\, playing board games and going 
+ bouldering.
+LAST-MODIFIED:20181016T195247Z
+LOCATION:
+SEQUENCE:4
+STATUS:CONFIRMED
+SUMMARY:John Children - Building and Testing Database extensions with Nix
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T153000Z
+DTEND:20181026T160000Z
+DTSTAMP:20181021T201940Z
+UID:29o78b31nvlhtam0oibbnu0dvq@google.com
+CREATED:20181016T195255Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T195259Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:30 min break
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T170000Z
+DTEND:20181025T173000Z
+DTSTAMP:20181021T201940Z
+UID:7vaeofv7aro1b4jqmbt0jirvdi@google.com
+CREATED:20180816T123749Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T200459Z
+LOCATION:
+SEQUENCE:4
+STATUS:CONFIRMED
+SUMMARY:Closing
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181026T170000Z
+DTEND:20181026T173000Z
+DTSTAMP:20181021T201940Z
+UID:4hv977qmqs89joqlvgf0sd37eo@google.com
+CREATED:20180909T124839Z
+DESCRIPTION:
+LAST-MODIFIED:20181016T200507Z
+LOCATION:
+SEQUENCE:4
+STATUS:CONFIRMED
+SUMMARY:Closing statement
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20181025T173000Z
+DTEND:20181025T210000Z
+DTSTAMP:20181021T201940Z
+UID:2brq6g03ina0q8n2k19jfnhv7k@google.com
+CREATED:20181009T140948Z
+DESCRIPTION:
+LAST-MODIFIED:20181021T124037Z
+LOCATION:Prospect Of Whitby\, 57 Wapping Wall\, St Katharine's & Wapping\, 
+ London E1W 3SH\, UK
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Social Event - Pub!
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
