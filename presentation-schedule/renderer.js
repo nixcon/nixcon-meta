@@ -1,6 +1,9 @@
 function render() {
-    // const now = new Date("2018-10-25T10:55:00+00:00")
-    const now = new Date(new Date().toUTCString())
+    let now = new Date(new Date().toUTCString())
+    // Default to first day
+    if (now < new Date("2018-10-25T07:00:00+00:00")) {
+        now = new Date("2018-10-25T07:00:00+00:00")
+    }
 
     function isToday(d1) {
       return d1.getUTCFullYear() === now.getUTCFullYear() &&
