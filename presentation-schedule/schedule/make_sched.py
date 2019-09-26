@@ -1,13 +1,14 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -p python3 python3Packages.icalendar -i python3
+#! nix-shell -p python3 python3Packages.icalendar python3Packages.requests -i python3
 from icalendar import Calendar
 from datetime import datetime
+import requests
+
 import json
 
 
 if __name__ == '__main__':
-    with open('schedule.ics','rb') as f:
-        data = f.read()
+    data = requests.get("https://cfp.nixcon.org/nixcon2019/schedule/export/schedule.ics").text
 
     gcal = Calendar.from_ical(data)
     sched = []

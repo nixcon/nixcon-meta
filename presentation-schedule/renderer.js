@@ -1,8 +1,8 @@
 function render() {
     let now = new Date(new Date().toUTCString())
     // Default to first day
-    if (now < new Date("2018-10-25T07:00:00+00:00")) {
-        now = new Date("2018-10-25T07:00:00+00:00")
+    if (now < new Date("2019-10-25T07:00:00+00:00")) {
+        now = new Date("2019-10-25T07:00:00+00:00")
     }
 
     function isToday(d1) {
