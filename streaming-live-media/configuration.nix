@@ -19,6 +19,8 @@
     tmux
   ];
 
+  services.xserver.autorun = lib.mkOverride 10 true;
+
   system.activationScripts = let
       homeDir = "/home/nixos/";
       desktopDir = homeDir + "Desktop/";
