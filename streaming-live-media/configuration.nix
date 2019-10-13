@@ -29,7 +29,7 @@
       mkdir -p ${obsPluginsDir}
       chown nixos ${homeDir} ${obsPluginsDir}
       ${lib.concatMapStringsSep "\n" (plugin: ''
-        ln -s "${plugin}/share/obs/obs-plugins/*" ${obsPluginsDir}/
+        ln -fs "${plugin}/share/obs/obs-plugins"/* ${obsPluginsDir}/
       '') obsPlugins}
     '';
     # Add a link to OBS to the desktop
