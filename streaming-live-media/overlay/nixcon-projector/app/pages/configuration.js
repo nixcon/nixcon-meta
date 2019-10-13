@@ -71,7 +71,7 @@ class Configurator extends Component {
 					</form>
 				</div>
 				<div className="preview">
-					<Viewer />
+					<Viewer config={config} />
 				</div>
 			</div>
 		);

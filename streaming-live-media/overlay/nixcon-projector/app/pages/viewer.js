@@ -1,11 +1,11 @@
 import React from "react";
-import config from "@configuration";
+import global_config from "@configuration";
+import GFX from "@app/gfx/name";
 
-const App = () =>
+const App = ({config = global_config}) =>
 	<div id="viewer">
-		<h1>{config["name"]}</h1>
-		<h2>{config["alias"]}</h2>
+		<GFX config={config} />
 	</div>
-	;
+;
 
 export default App;
