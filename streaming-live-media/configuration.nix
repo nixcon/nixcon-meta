@@ -22,12 +22,14 @@
   system.activationScripts = let
       homeDir = "/home/nixos/";
       desktopDir = homeDir + "Desktop/";
-      obsPluginsDir = homeDir + ".config/obs-studio/plugins";
+      xdgConfig = homeDir + ".config/";
+      obsPluginsDir = xdgConfig + "obs-studio/plugins";
       obsPlugins = [ pkgs.obs-linuxbrowser ];
     in {
     obsPlugins = ''
       mkdir -p ${obsPluginsDir}
-      chown nixos ${homeDir} ${obsPluginsDir}
+      chown nixos ${homeDir}
+      chown -R nixos ${xdgConfig}
       ${lib.concatMapStringsSep "\n" (plugin: ''
         ln -fs "${plugin}/share/obs/obs-plugins"/* ${obsPluginsDir}/
       '') obsPlugins}
