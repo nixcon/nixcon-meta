@@ -3,7 +3,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const project_dir = path.resolve(__dirname);
-const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 module.exports = (env, argv) => {
 	const min = argv.mode === "development" ? "" : ".[chunkhash].min";
@@ -30,14 +29,10 @@ module.exports = (env, argv) => {
 				filename: `[name]${min}.css`,
 				chunkFilename: `[id]${min}.css`
 			}),
-			new CopyWebpackPlugin(
-				['avatars/**/*']
-			),
 		],
 		resolve: {
 			alias: {
 				"@app": path.resolve(project_dir, "app"),
-				// Oh, what's this?
 				"@library": path.resolve(project_dir, "library"),
 			},
 			modules: [
@@ -51,12 +46,6 @@ module.exports = (env, argv) => {
 		devServer: {
 			historyApiFallback: {
 				index: "/",
-			},
-			proxy: {
-				"/api": {
-					target: "http://localhost:3000",
-					pathRewrite: {"^/api" : ""}
-				}
 			},
 		},
 		module: {
