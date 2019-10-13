@@ -1,0 +1,6 @@
+{
+  "name": "nixcon2019-gfx",
+  "version": "0.0.1",
+  "main": "app/electron-main.js",
+  "license": "GPLv2"
+}
