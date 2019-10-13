@@ -4,6 +4,7 @@
 {
   imports = [
     <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-graphical-kde.nix>
+    ./overlay
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
