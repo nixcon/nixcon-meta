@@ -23,15 +23,15 @@
       homeDir = "/home/nixos/";
       desktopDir = homeDir + "Desktop/";
       obsPluginsDir = homeDir + ".config/obs-studio/plugins";
-      obsPlugins = [ /* pkgs.obs-linuxbrowser */ ];
+      obsPlugins = [ pkgs.obs-linuxbrowser ];
     in {
-#    obsPlugins = ''
-#      mkdir -p ${obsPluginsDir}
-#      chown nixos ${homeDir} ${obsPluginsDir}
-#      ${lib.concatMapStringsSep "\n" (plugin: ''
-#        ln -s "${plugin}/share/obs/obs-plugins/*" ${obsPluginsDir}/
-#      '') obsPlugins}
-#    '';
+    obsPlugins = ''
+      mkdir -p ${obsPluginsDir}
+      chown nixos ${homeDir} ${obsPluginsDir}
+      ${lib.concatMapStringsSep "\n" (plugin: ''
+        ln -s "${plugin}/share/obs/obs-plugins/*" ${obsPluginsDir}/
+      '') obsPlugins}
+    '';
     # Add a link to OBS to the desktop
     obsDesktop = ''
       mkdir -p ${desktopDir}
