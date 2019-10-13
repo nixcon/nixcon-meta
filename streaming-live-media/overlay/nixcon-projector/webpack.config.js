@@ -34,6 +34,7 @@ module.exports = (env, argv) => {
 			alias: {
 				"@app": path.resolve(project_dir, "app"),
 				"@library": path.resolve(project_dir, "library"),
+				"@configuration": path.resolve(project_dir, "configuration.json"),
 			},
 			modules: [
 				path.resolve(`${project_dir}/node_modules`),
