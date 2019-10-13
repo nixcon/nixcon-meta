@@ -2,5 +2,10 @@
   "name": "nixcon2019-gfx",
   "version": "0.0.1",
   "main": "app/electron-main.js",
-  "license": "GPLv2"
+  "license": "GPLv2",
+  "devDependencies": {
+    "webpack": "^4.41.1",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  }
 }
