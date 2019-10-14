@@ -26,8 +26,6 @@ const GFX = ({config}) =>
 		<g
 			transform="translate(0,-12)"
 		>
-			{/* fixme: somehow reuse rectangles component */}
-			{/* Shadow */}
 			<g
 				style={{
 					opacity: 0.5,
