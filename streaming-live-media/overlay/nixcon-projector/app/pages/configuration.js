@@ -5,6 +5,18 @@ import Viewer from "./viewer";
 
 const fs = window.require ? window.require("fs") : null;
 
+const gfxes = [
+	"name",
+	"title",
+];
+
+const text_configs = [
+	"talk",
+	"name",
+	"alias",
+	"avatar"
+];
+
 const Text = ({value, onChange}) =>
 	<input
 		type="text"
@@ -51,8 +63,16 @@ class Configurator extends Component {
 				</header>
 				<div className="configuration">
 					<form onSubmit={(e) => this.save(e)}>
+						<div>
+							<label>
+								<span>GFX</span>
+								<select value={config["gfx"]} onChange={(e) => this.setConfig("gfx", e.target.value)}>
+									{gfxes.map((name) => <option key={name} value={name}>{name}</option>)}
+								</select>
+							</label>
+						</div>
 						{
-							["name", "alias", "avatar"].map((name) =>
+							text_configs.map((name) =>
 								<div key={name}>
 									<label>
 										<span>{name}</span>
@@ -65,7 +85,11 @@ class Configurator extends Component {
 						{
 							this.canSave &&
 								<div>
-									<button type="submit">Save</button>
+									<p>
+										Please ensure the GFX scene is not shown in obs
+										before switching GFX.
+									</p>
+									<button type="submit">Switch GFX</button>
 								</div>
 						}
 					</form>
