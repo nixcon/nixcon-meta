@@ -50,6 +50,7 @@ class Configurator extends Component {
 	mergeConfig(in_config) {
 		const blank = fromPairs(text_configs.map((k) => [k, ""]));
 		const config = Object.assign({}, this.state.config, blank, in_config);
+		delete config._id;
 		this.setState({config});
 	}
 
