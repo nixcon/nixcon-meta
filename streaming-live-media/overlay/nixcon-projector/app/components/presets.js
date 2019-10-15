@@ -38,6 +38,26 @@ class Presets extends Component {
 
 		this.props.onChange(config);
 	}
+	handleRemove() {
+		if (this.current === -1) {
+			return;
+		}
+		const {preset: {configs, save}} = this.context;
+
+		const data = [].concat(
+			configs.slice(0, this.current),
+			configs.slice(this.current+1),
+		);
+
+		save(data);
+	}
+	handleAdd() {
+		const {config} = this.props;
+
+		const {preset: {configs, save}} = this.context;
+
+		save([].concat(configs, [config]));
+	}
 	render() {
 		const {preset} = this.context;
 		const {current} = this;
@@ -46,7 +66,7 @@ class Presets extends Component {
 			<div className="presets">
 				<h3>Presets</h3>
 				<select size="9" onChange={(e) => this.handleChange(e)} value={current.toString()}>
-					<option disabled="disabled" value="-1"></option>
+					<option disabled="disabled" value="-1">Choose a preset to change the configuration...</option>
 					{preset.configs.map((config, i) => {
 						const {name, talk = "[no talk]"} = config;
 
@@ -55,6 +75,10 @@ class Presets extends Component {
 						);
 					})}
 				</select>
+				<div>
+					<button onClick={() => this.handleAdd()}>➕Add preset</button>
+					<button onClick={() => this.handleRemove()}>➖Remove preset</button>
+				</div>
 			</div>
 		);
 	}

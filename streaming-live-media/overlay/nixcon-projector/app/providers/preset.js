@@ -22,9 +22,6 @@ if (electron) {
 	}
 }
 
-// TODO:
-//  -> save_preset(config)
-//  -> remove_preset(index)
 class PresetProvider extends Component {
 	constructor() {
 		super();
@@ -72,6 +69,7 @@ class PresetProvider extends Component {
 	save(data) {
 		mkdir_p(config_dir);
 		fs.writeFileSync(preset_path, JSON.stringify(data, null, "  "));
+		this.setState({configs: data});
 		console.log("Saved");
 	}
 
