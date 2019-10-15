@@ -6,19 +6,24 @@ import isEqual from "lodash/isEqual";
 import pick from "lodash/pick";
 import pickBy from "lodash/pickBy";
 
-const text_configs = [
+const saved_configs = [
 	"talk",
 	"name",
 	"alias",
 	"avatar"
 ];
 
-const normalize = (v) =>
-	pickBy(
-		pick(v, text_configs),
+const normalize = (v, {with_gfx = false}) => {
+	const configs = [].concat(saved_configs);
+	if (with_gfx) {
+		configs.push("gfx");
+	}
+
+	return pickBy(
+		pick(v, configs),
 		(v) => !isEmpty(v)
-	)
-;
+	);
+};
 
 class Presets extends Component {
 	constructor() {
@@ -28,7 +33,11 @@ class Presets extends Component {
 		const {preset: {configs}} = this.context;
 		const {config} = this.props;
 
-		return findIndex(configs, (el) => isEqual(normalize(el), normalize(config)));
+		return findIndex(configs, (el) => {
+			const with_gfx = !isEmpty(el["gfx"]);
+
+			return isEqual(normalize(el, {with_gfx}), normalize(config, {with_gfx}))
+		});
 	}
 	handleChange(e) {
 		const value = parseInt(e.target.value);
@@ -96,9 +105,10 @@ class Presets extends Component {
 					<option disabled="disabled" value="-1">Choose a preset to change the configuration...</option>
 					{preset.configs.map((config, i) => {
 						const {name, talk = "[no talk]"} = config;
+						const id = config["_id"] || `${name} / ${talk}`;
 
 						return (
-							<option value={i} key={i}>{name} / {talk}</option>
+							<option value={i} key={i}>{id}</option>
 						);
 					})}
 				</select>
