@@ -52,7 +52,7 @@ module.exports = (env, argv) => {
 				chunkFilename: `[id]${min}.css`
 			}),
 			new CopyWebpackPlugin(
-				['avatars/**/*']
+				[path.join(config_dir, "avatars/**/*")]
 			),
 		],
 		resolve: {
