@@ -58,6 +58,33 @@ class Presets extends Component {
 
 		save([].concat(configs, [config]));
 	}
+	handleMove(direction) {
+		if (this.current === -1) {
+			return;
+		}
+		const {preset: {configs, save}} = this.context;
+
+		if (direction === -1 && this.current === 0) {
+			return;
+		}
+		if (direction === 1 && this.current === configs.length) {
+			return;
+		}
+
+		// Whew, this is a weird thing, but this basically inserts at the
+		// expected location depending on the direction.
+		const data = [].concat(
+			configs.slice(0, Math.max(this.current-1, 0)),
+			direction === -1 ? [configs[this.current]] : [],
+			configs.slice(Math.max(this.current-1, 0), this.current),
+
+			configs.slice(this.current+1, this.current+2),
+			direction === 1 ? [configs[this.current]] : [],
+			configs.slice(this.current+2),
+		);
+
+		save(data);
+	}
 	render() {
 		const {preset} = this.context;
 		const {current} = this;
@@ -78,6 +105,8 @@ class Presets extends Component {
 				<div>
 					<button onClick={() => this.handleAdd()}>➕Add preset</button>
 					<button onClick={() => this.handleRemove()}>➖Remove preset</button>
+					<button onClick={() => this.handleMove(-1)}>{" "}↑{" "}</button>
+					<button onClick={() => this.handleMove( 1)}>{" "}↓{" "}</button>
 				</div>
 			</div>
 		);
