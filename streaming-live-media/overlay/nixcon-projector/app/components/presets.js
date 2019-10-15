@@ -41,7 +41,6 @@ class Presets extends Component {
 	render() {
 		const {preset} = this.context;
 		const {current} = this;
-		console.log(current);
 
 		return (
 			<div className="presets">

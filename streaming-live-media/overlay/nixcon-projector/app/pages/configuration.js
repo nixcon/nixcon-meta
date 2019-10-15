@@ -48,7 +48,6 @@ class Configurator extends Component {
 	}
 
 	mergeConfig(in_config) {
-		console.log(in_config);
 		const blank = fromPairs(text_configs.map((k) => [k, ""]));
 		const config = Object.assign({}, this.state.config, blank, in_config);
 		this.setState({config});
@@ -104,12 +103,10 @@ class Configurator extends Component {
 								</div>
 						}
 					</form>
-					<div>
-						<Presets
-							onChange={(config) => this.mergeConfig(config)}
-							config={config}
-						/>
-					</div>
+					<Presets
+						onChange={(config) => this.mergeConfig(config)}
+						config={config}
+					/>
 				</div>
 				<div className="preview">
 					<Viewer config={config} />
