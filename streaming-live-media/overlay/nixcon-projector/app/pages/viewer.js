@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import {fontFamily} from "@app/gfx/variables";
 
 const Null = () => null;
 
@@ -45,6 +46,12 @@ class Viewer extends Component {
 		const {config, GFX} = this;
 		return (
 			<div id="viewer">
+				<style>{`
+					.screen {
+						font-family: "${fontFamily}";
+					}
+				`}
+				</style>
 				<GFX config={config} />
 			</div>
 		);
