@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import global_config from "@configuration";
+import PropTypes from "prop-types";
 
 const Null = () => null;
 
@@ -33,7 +33,7 @@ class Viewer extends Component {
 			return this.props.config;
 		}
 		else {
-			return global_config;
+			return this.context.configuration.config;
 		}
 	}
 
@@ -56,5 +56,8 @@ class Viewer extends Component {
 //		<GFX config={config} />
 //	</div>
 //;
+Viewer.contextTypes = {
+	configuration: PropTypes.object,
+};
 
 export default Viewer;

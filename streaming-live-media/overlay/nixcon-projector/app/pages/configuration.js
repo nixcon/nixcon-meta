@@ -1,9 +1,7 @@
 import React, {Component} from "react";
-import CONFIG from "@configuration";
+import PropTypes from "prop-types";
 
 import Viewer from "./viewer";
-
-const fs = window.require ? window.require("fs") : null;
 
 const gfxes = [
 	"name",
@@ -28,9 +26,17 @@ const Text = ({value, onChange}) =>
 class Configurator extends Component {
 	constructor() {
 		super();
-		this.state = {
-			config: Object.assign({}, CONFIG),
-		};
+		this.state = {};
+	}
+
+	UNSAFE_componentWillMount() {
+		this.setState({
+			config: Object.assign({}, this.configuration.config),
+		});
+	}
+
+	get configuration() {
+		return this.context.configuration;
 	}
 
 	setConfig(name, value) {
@@ -39,16 +45,10 @@ class Configurator extends Component {
 		this.setState({config});
 	}
 
-	get canSave() {
-		return fs !== null;
-	}
-
 	save(e) {
 		e.preventDefault();
 		const {config} = this.state;
-		// Hmmm, this assumes cwd is the location of configuration.json
-		// FIXME: Fix configuration.json as a well known location.
-		fs.writeFileSync("./configuration.json", JSON.stringify(config, null, "  "));
+		this.configuration.save(config);
 
 		return false;
 	}
@@ -66,7 +66,8 @@ class Configurator extends Component {
 						<div>
 							<label>
 								<span>GFX</span>
-								<select value={config["gfx"]} onChange={(e) => this.setConfig("gfx", e.target.value)}>
+								<select defaultValue="" value={config["gfx"]} onChange={(e) => this.setConfig("gfx", e.target.value)}>
+									<option disabled value="">Choose...</option>
 									{gfxes.map((name) => <option key={name} value={name}>{name}</option>)}
 								</select>
 							</label>
@@ -83,13 +84,13 @@ class Configurator extends Component {
 						}
 
 						{
-							this.canSave &&
+							this.configuration.can_save &&
 								<div>
 									<p>
 										Please ensure the GFX scene is not shown in obs
 										before switching GFX.
 									</p>
-									<button type="submit">Switch GFX</button>
+									<button type="submit">Save data and switch GFX</button>
 								</div>
 						}
 					</form>
@@ -101,5 +102,9 @@ class Configurator extends Component {
 		);
 	}
 }
+
+Configurator.contextTypes = {
+	configuration: PropTypes.object,
+};
 
 export default Configurator;

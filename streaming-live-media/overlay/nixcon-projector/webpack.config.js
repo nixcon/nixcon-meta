@@ -5,6 +5,27 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const project_dir = path.resolve(__dirname);
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 
+const fs = require("fs");
+const process = require("process");
+
+// Using var to hoist the name up in the scope.
+const config_dir = path.join(
+	(process.env.XDG_CONFIG_HOME || path.join(process.env.HOME, ".config")),
+	"nixcon-projector"
+);
+
+const config_path = path.join(config_dir, "config.json");
+const mkdir_p = function(path) {
+	if (!fs.existsSync(path)) {
+		fs.mkdirSync(path, {recursive: true});
+	}
+}
+
+mkdir_p(config_dir);
+if (!fs.existsSync(config_path)) {
+	fs.writeFileSync(config_path, JSON.stringify({}, null, "  "));
+}
+
 module.exports = (env, argv) => {
 	const min = argv.mode === "development" ? "" : ".[chunkhash].min";
 	const optimization = {};
@@ -38,7 +59,7 @@ module.exports = (env, argv) => {
 			alias: {
 				"@app": path.resolve(project_dir, "app"),
 				"@library": path.resolve(project_dir, "library"),
-				"@configuration": path.resolve(project_dir, "configuration.json"),
+				"@configuration": path.join(config_dir, "config.json"),
 			},
 			modules: [
 				path.resolve(`${project_dir}/node_modules`),

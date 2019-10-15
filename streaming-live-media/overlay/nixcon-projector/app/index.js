@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles";
+import ConfigurationProvider from "@app/providers/configuration";
 
 let page = window.location.pathname.replace(/^\/+/, "");
 if (page === "") {
@@ -22,10 +23,16 @@ const Error = ({error}) =>
 	</div>
 ;
 
+const App = ({children}) =>
+	<ConfigurationProvider>
+		{children}
+	</ConfigurationProvider>
+;
+
 // The cheapest "router" you can get.
 import(`./pages/${page}`)
-.then(({default: App}) => 
-	ReactDOM.render(<App />, document.getElementById("root"))
+.then(({default: Page}) => 
+	ReactDOM.render(<App><Page /></App>, document.getElementById("root"))
 )
 .catch((err) => {
 	ReactDOM.render(<Error error={err} />, document.getElementById("root"))
