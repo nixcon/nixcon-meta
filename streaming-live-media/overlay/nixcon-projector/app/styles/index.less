@@ -139,8 +139,27 @@ form {
 	label > select {
 		width: 20em;
 	}
-	button {
-		padding: 0.5em
+}
+button {
+	padding: 0.5em
+}
+
+.configuration {
+	display: flex;
+	& > * {
+		&:not(:last-child) {
+			padding-right: 1em;
+		}
+		&:not(:first-child) {
+			padding-left: 1em;
+			border-left: 1px solid #000;
+		}
+	}
+}
+
+.presets {
+	select {
+		min-width: 30ch;
 	}
 }
 

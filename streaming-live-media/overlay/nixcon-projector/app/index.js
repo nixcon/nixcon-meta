@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./styles";
 import ConfigurationProvider from "@app/providers/configuration";
+import PresetProvider from "@app/providers/preset";
 
 let page = window.location.pathname.replace(/^\/+/, "");
 if (page === "") {
@@ -24,9 +25,11 @@ const Error = ({error}) =>
 ;
 
 const App = ({children}) =>
+	<PresetProvider>
 	<ConfigurationProvider>
 		{children}
 	</ConfigurationProvider>
+	</PresetProvider>
 ;
 
 // The cheapest "router" you can get.

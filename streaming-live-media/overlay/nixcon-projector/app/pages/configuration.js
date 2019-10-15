@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import Presets from "@app/components/presets";
+import fromPairs from "lodash/fromPairs";
 
 import Viewer from "./viewer";
 
@@ -45,6 +47,13 @@ class Configurator extends Component {
 		this.setState({config});
 	}
 
+	mergeConfig(in_config) {
+		console.log(in_config);
+		const blank = fromPairs(text_configs.map((k) => [k, ""]));
+		const config = Object.assign({}, this.state.config, blank, in_config);
+		this.setState({config});
+	}
+
 	save(e) {
 		e.preventDefault();
 		const {config} = this.state;
@@ -63,6 +72,7 @@ class Configurator extends Component {
 				</header>
 				<div className="configuration">
 					<form onSubmit={(e) => this.save(e)}>
+						<h3>Configuration</h3>
 						<div>
 							<label>
 								<span>GFX</span>
@@ -94,6 +104,12 @@ class Configurator extends Component {
 								</div>
 						}
 					</form>
+					<div>
+						<Presets
+							onChange={(config) => this.mergeConfig(config)}
+							config={config}
+						/>
+					</div>
 				</div>
 				<div className="preview">
 					<Viewer config={config} />
