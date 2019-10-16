@@ -62,11 +62,6 @@ module.exports = (env, argv) => {
 				"@library": path.resolve(project_dir, "library"),
 				"@configuration": path.join(config_dir, "config.json"),
 			},
-			modules: [
-				path.resolve(`${project_dir}/node_modules`),
-				path.resolve(`${project_dir}/app/modules`),
-				path.resolve(`${project_dir}/vendor`),
-			]
 		},
 		devtool: argv.mode === "development" ? "source-map" : "hidden-source-map",
 		optimization,
