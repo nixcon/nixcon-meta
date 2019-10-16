@@ -51,9 +51,10 @@ module.exports = (env, argv) => {
 				filename: `[name]${min}.css`,
 				chunkFilename: `[id]${min}.css`
 			}),
-			new CopyWebpackPlugin(
-				[path.join(config_dir, "avatars/**/*")]
-			),
+			new CopyWebpackPlugin([
+				path.join(project_dir, "app/assets/*.svg"),
+				path.join(config_dir, "avatars/**/*"),
+			]),
 		],
 		resolve: {
 			alias: {

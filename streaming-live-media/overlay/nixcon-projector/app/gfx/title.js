@@ -9,6 +9,9 @@ const GFX = ({config}) =>
 		<h1>{config["talk"]}</h1>
 		<div>Speaker</div>
 		<h2>{config["name"]}</h2>
+		<hr />
+		<img src="/app/assets/nixcon2019.svg" />
+		<h3>NixCon 2019</h3>
 	</div>
 ;
 
