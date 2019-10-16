@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+
+dir="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"; pwd)"
+
+cd "$dir"
+exec node_modules/.bin/webpack-dev-server "$@"

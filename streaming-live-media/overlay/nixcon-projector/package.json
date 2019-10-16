@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "main": "app/electron-main.js",
   "license": "GPLv2",
+  "bin": {
+	  "nixcon-projector-webpack": "run-webpack",
+	  "nixcon-projector": "run-projector"
+  },
   "devDependencies": {
     "buble": "^0.19.8",
     "buble-loader": "^0.5.1",
