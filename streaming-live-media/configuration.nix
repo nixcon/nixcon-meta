@@ -17,6 +17,11 @@
     firefox
     chromium
     tmux
+    nixcon-projector
+  ];
+
+  fonts.fonts = with pkgs; [
+    go-font
   ];
 
   services.xserver.autorun = lib.mkOverride 10 true;
@@ -27,6 +32,12 @@
       xdgConfig = homeDir + ".config/";
       obsPluginsDir = xdgConfig + "obs-studio/plugins";
       obsPlugins = [ pkgs.obs-linuxbrowser ];
+      projectorDesktopItem = pkgs.makeDesktopItem {
+        name = "nixcon-projector";
+        exec = "${pkgs.nixcon-projector}/bin/nixcon-projector";
+        icon = "emblem-videos-symbolic";
+        desktopName = "Projector";
+      };
     in {
     obsPlugins = ''
       mkdir -p ${obsPluginsDir}
@@ -42,6 +53,15 @@
       chown nixos ${homeDir} ${desktopDir}
 
       ln -sfT ${pkgs.obs-studio}/share/applications/com.obsproject.Studio.desktop ${desktopDir + "obs.desktop"}
+      ln -sfT ${projectorDesktopItem}/share/applications/nixcon-projector.desktop ${desktopDir + "nixcon-projector.desktop"}
     '';
+  };
+
+  systemd.user.services = {
+    projector-webpack = {
+      description = "NixCon projector webpack server";
+      script = "${pkgs.nixcon-projector}/bin/nixcon-projector-webpack";
+      wantedBy = [ "default.target" ];
+    };
   };
 }
