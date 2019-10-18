@@ -25,7 +25,7 @@ BASE = "https://cfp.nixcon.org"
 EVENT = "nixcon2019"
 
 # Do the API call
-data = JSON.parse(get("#{BASE}/api/events/#{EVENT}/talks/"))
+data = JSON.parse(get("#{BASE}/api/events/#{EVENT}/talks/?limit=1000"))
 
 # Checks there's no paging... if there is we need to review this script.
 abort "Unexpected paging" if data["next"]
