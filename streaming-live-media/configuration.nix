@@ -4,6 +4,7 @@
 {
   imports = [
     <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-graphical-kde.nix>
+    ./overlay
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -16,27 +17,51 @@
     firefox
     chromium
     tmux
+    nixcon-projector
   ];
+
+  fonts.fonts = with pkgs; [
+    go-font
+  ];
+
+  services.xserver.autorun = lib.mkOverride 10 true;
 
   system.activationScripts = let
       homeDir = "/home/nixos/";
       desktopDir = homeDir + "Desktop/";
-      obsPluginsDir = homeDir + ".config/obs-studio/plugins";
-      obsPlugins = [ /* pkgs.obs-linuxbrowser */ ];
+      xdgConfig = homeDir + ".config/";
+      obsPluginsDir = xdgConfig + "obs-studio/plugins";
+      obsPlugins = [ pkgs.obs-linuxbrowser ];
+      projectorDesktopItem = pkgs.makeDesktopItem {
+        name = "nixcon-projector";
+        exec = "${pkgs.nixcon-projector}/bin/nixcon-projector";
+        icon = "emblem-videos-symbolic";
+        desktopName = "Projector";
+      };
     in {
-#    obsPlugins = ''
-#      mkdir -p ${obsPluginsDir}
-#      chown nixos ${homeDir} ${obsPluginsDir}
-#      ${lib.concatMapStringsSep "\n" (plugin: ''
-#        ln -s "${plugin}/share/obs/obs-plugins/*" ${obsPluginsDir}/
-#      '') obsPlugins}
-#    '';
+    obsPlugins = ''
+      mkdir -p ${obsPluginsDir}
+      chown nixos ${homeDir}
+      chown -R nixos ${xdgConfig}
+      ${lib.concatMapStringsSep "\n" (plugin: ''
+        ln -fs "${plugin}/share/obs/obs-plugins"/* ${obsPluginsDir}/
+      '') obsPlugins}
+    '';
     # Add a link to OBS to the desktop
     obsDesktop = ''
       mkdir -p ${desktopDir}
       chown nixos ${homeDir} ${desktopDir}
 
       ln -sfT ${pkgs.obs-studio}/share/applications/com.obsproject.Studio.desktop ${desktopDir + "obs.desktop"}
+      ln -sfT ${projectorDesktopItem}/share/applications/nixcon-projector.desktop ${desktopDir + "nixcon-projector.desktop"}
     '';
+  };
+
+  systemd.user.services = {
+    projector-webpack = {
+      description = "NixCon projector webpack server";
+      script = "${pkgs.nixcon-projector}/bin/nixcon-projector-webpack";
+      wantedBy = [ "default.target" ];
+    };
   };
 }

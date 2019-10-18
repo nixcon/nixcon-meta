@@ -1,0 +1,180 @@
+#no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#yes-select {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+    cursor: initial;
+}
+
+#appize() {
+    body {
+        #no-select();
+    }
+
+    a, button {
+        cursor: pointer;
+    }
+
+    input, textarea {
+        #yes-select();
+    }
+}
+
+#checkerboard(@color, @size) {
+    @_sz: @size/2;
+    background: #fff;
+    background-image:
+        linear-gradient( 45deg,      @color 25%, transparent 25%),
+        linear-gradient(-45deg,      @color 25%, transparent 25%),
+        linear-gradient( 45deg, transparent 75%,      @color 75%),
+        linear-gradient(-45deg, transparent 75%,      @color 75%),
+    ;
+    background-size: @size @size;
+    background-position: 0 0, 0 @_sz, @_sz -@_sz, -@_sz 0;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	color: #000;
+	font-family: "Go Mono", Go, "Go Medium", sans-serif;
+	width: 100%;
+	height: 100%;
+	#appize();
+}
+
+
+.error {
+	color: #dd0000;
+}
+
+html.loaded {
+	background-color: #ffffff;
+}
+
+#app-viewer {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+// Embedded viewer.
+#app-configuration #viewer {
+	position: relative;
+	#checkerboard(#ccc, 30px);
+	margin: 1em 0;
+	border: 1em solid #000;
+	border-left: 0;
+	border-right: 0;
+	& > svg {
+		width: 100%;
+		height: auto;
+	}
+	& > .screen {
+	}
+		width: 100vw;
+		min-height: calc(100/16*9 * 1vw);
+}
+
+.screen {
+	display: flex;
+	flex-direction: column;
+	h1, h2, h3 {
+		font-weight: normal;
+		margin-bottom: 0.8em;
+	}
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-size: 1.7vw;
+	h1 { font-size: 3em; }
+	h2 { font-size: 2.3em; }
+	h3 { font-size: 1.8em; }
+
+	padding: 1vw;
+	padding-top: 5vw;
+
+	background: rgba(226, 236, 242, 0.92);
+	color: #000;
+
+	hr {
+		border: 0;
+		flex-grow: 1;
+	}
+	img {
+		padding: 1em;
+		max-height: 16vw;
+	}
+}
+
+// Applies to *all* viewer instance.
+// Generally, there shouldn't be any rules here.
+#viewer {
+}
+
+// Makes the form more usable.
+form {
+	label {
+		cursor: pointer;
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.2);
+		}
+		&, & > input, & > select {
+			padding: 0.2em;
+		}
+	}
+	label > span:first-child {
+		display: inline-block;
+		width: 12em;
+	}
+	label > input,
+	label > select {
+		width: 20em;
+	}
+}
+button {
+	padding: 0.5em
+}
+
+.configuration {
+	display: flex;
+	& > * {
+		&:not(:last-child) {
+			padding-right: 1em;
+		}
+		&:not(:first-child) {
+			padding-left: 1em;
+			border-left: 1px solid #000;
+		}
+	}
+}
+
+.presets {
+	select {
+		min-width: 30ch;
+	}
+}
+
+svg .shadow {
+	&, * {
+		fill: #000 !important;
+	}
+}
